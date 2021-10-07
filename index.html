@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <ul class="main-menu">
+            <li>
+                <a href="#about">About</a>
+            </li>
+            <li>
+                <a href="#lemonmap">Lemonmap</a>
+            </li>
+            <li>
+                <a href="#">Connect</a>
+            </li>
+        </ul>
+        <ul class="social-icon">
+            <li>
+                <a href="https://discord.gg/DnaFGpwCKQ"target="_blank">
+                    
+                    <img src="/assets/discordlogo.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="https://twitter.com/LittlelemonsNFT"target="_blank">
+                    <img src="./assets/twitterlogo.png" alt="">
+                </a>
+            </li>
+            <li>
+                    <img src="./assets/nomusic.png" id="icon">
+                </a>
+            </li>
+        </ul>
+        <audio id="mySong">
+            <source src="./assets/song.mp3" type="audio/mp3">
+        </audio>
+
+        <script>
+            var mySong = document.getElementById("mySong");
+            var icon = document.getElementById("icon");
+            
+            icon.onclick = function(){
+                if(mySong.paused){
+                    mySong.play();
+                    icon.src = "./assets/music.png";
+                }else{
+                    mySong.pause();
+                    icon.src = "./assets/nomusic.png"
+                }
+            }
+        </script>
+
+    </header>
+    <section class="showcase sec-1">
+        <div class="video-container">
+            <img class="mobiletree" src="./assets/stilltree.png">
+            <video class="videotree" src="./assets/headertreebg.mp4" autoplay muted loop></video>
+        </div>
+        <div class="content">
+            <img class="title"src="./assets/title2.png" alt="">
+            <!-- Add class - btn-disable into below element for grey color disabled button 
+            will look like this 
+            <div class="btn btn-disable"> -->
+                <div class="btn btn-disable">
+            <div class="btn">
+                <svg class="qty-minus" width="14" height="6" viewBox="0 0 14 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13.2377 5.54157H0.513672V0.27567H13.2377V5.54157Z" fill="white"/>
+                </svg>
+                <button>
+                    <span>Mint</span>
+                    <span class="qty">1</span>
+                    <p><span class="ttl_amt" data-amount="0.035">0.035</span> Ξ</p>
+                </button>
+                <svg class="qty-plus" width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.0511 9.58064H23.2098V15.4794H15.0511V24.7003H8.83594V15.4794H0.654577V9.58064H8.83594V0.743862H15.0511V9.58064Z" fill="white"/>
+                </svg>
+                    
+            </div>
+            <p class="leamon-text">Lemons left:</p>
+            <p class="leamon-amount">9,999/9,999</p>
+        </div>
+    </section>
+    <section class="sec-2">
+        <img src="./assets/headerbottomlemons.png" alt="">
+    </section>
+    <section class="showcase sec-3" id="about">
+        <div class="video-container">
+            <video src="./assets/grassbackground.mp4" autoplay muted loop></video>
+        </div>
+        <div class="content">
+            <div class="sec-3-container">
+                <div class="left">
+                    <img src="./assets/lemonicon.png" alt="">
+                    <h1>WHAT ARE THESE LITTLE LEMONS?</h1>
+                    <p>Little Lemon Friends is a NFT collection on the Ethereum blockchain consisting of 9,999 lemons that fell from the giant lemon tree, each going on their own little lemon adventures.</p>
+                    <br>
+                    <p>Each lemon will cost 0.035Ξ</p>
+                </div>
+                <div class="right">
+                    <img src="./assets/parentlemon.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sec-4">
+        <div class="sec-4-container">
+            <div class="left">
+                <img src="./assets/traitsicon.png" alt="">
+                <h1>TRAITS</h1>
+                <br>
+                <p>Every lemon is unique and randomly generated as they each have collected different items throughout their adventures such as hats, accessories, clothes and more!</p>
+                <br><br>
+                <p>Fun Fact: There are more than 140 traits!</p>
+            </div>
+            <div class="right">
+                <img src="./assets/traitsImage.png" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="sec-5">
+        <img src="./assets/lemonicon.png" alt="">
+        <h1>LEMON TYPES</h1>
+        <div class="lemon-slider">
+            <div class="lemon-slider-element">
+                    <img src="./assets/type1.png" alt="">
+                    <h2>Lemon Lemon</h2>
+                    <p>Common</p>
+            </div>
+            <div class="lemon-slider-element">
+                    <img src="./assets/type3.png" alt="">
+                    <h2>Gold Lemon</h2>
+                    <p>Rare</p>
+            </div>
+            <div class="lemon-slider-element">
+                <img src="./assets/type2.png" alt="">
+                <h2>Robo Lemon</h2>
+                <p>Pretty Rare</p>
+            </div>
+            <div class="lemon-slider-element">
+                    <img src="./assets/type4.png" alt="">
+                    <h2>Zombie Lemon</h2>
+                    <p>Pretty Rare</p>
+            </div>
+            <div class="lemon-slider-element">
+                    <img src="./assets/type6.png" alt="">
+                    <h2>Gemstone Lemons</h2>
+                    <p>Super Rare</p>
+            </div>
+            <div class="lemon-slider-element">
+                    <img src="./assets/type5.png" alt="">
+                    <h2>B&W Lemon</h2>
+                    <p>Ultra Rare</p>
+            </div>
+            <div class="lemon-slider-element">
+                <img src="./assets/type7.png" alt="">
+                <h2>???</h2>
+                <p>?@*&</p>
+        </div>
+        </div>
+    </section>
+    <section class="sec-6">
+        <div class="assets6">
+        <div class="object-1 floating1">
+            <img src="./assets/lemoncircle1.png" alt="">
+        </div>
+        <div class="object-2 floating">
+            <img src="./assets/lemoncircle2.png" alt="">
+        </div>
+        <div class="object-3 floating2">
+            <img src="./assets/lemoncircle3.png" alt="">
+        </div>
+        <div class="object-4 floating3">
+            <img src="./assets/lemoncircle4.png" alt="">
+        </div>
+        <div class="text-1">so...</div>
+        <div class="text-2">WHY BUY A LEMON???</div>
+    </div>
+    </section>
+
+
+    <section class="sec-7" id="lemonmap">
+        <img class="lemonmaptitle" src="./assets/lemonmaptitle.png" alt="">
+        <ul>
+            <li>
+                <img class="roadicon art" src="./assets/artlemon.png" alt="">
+                <h2 class="stroke-single" title="Artist Collaborations/Events">Artist Collaborations/Events</h2>
+                <p>There will be frequent featured artist(s) that we will collab with to make more awesome lemon art in different styles for you to collect and enjoy!
+                    <br><br>As a community, we want to spotlight underrated artists and help them grow and gain the recognition that they deserve in the NFT space.
+                </p>
+            </li>
+            <li>
+                <img class="roadicon isogif" src="./assets/isogif.gif" alt="">
+                <h2 class="stroke-single" title="3D Voxel Lemons for the Metaverse">3D Voxel Lemons for the Metaverse</h2>
+                <p>Every lemon you hold will allow you to claim a 3D voxel lemon for the metaverse!
+                    The Giant Lemon Tree will also be created in the metaverse for all little lemons to have a nice area to chill and hangout :)</p>
+            </li>
+            <li>
+                <img class="roadicon" src="./assets/lemongiftrans.gif" alt="">
+                <h2 class="stroke-single" title="Pixel Lemons">Pixel Lemons</h2>
+                <p>Lemon holders will be able to claim a free animated pixel lemon nft (with generated traits) for each lemon they hold! These pixel lemons will have it's own usecases such as access to a Little Lemon game.</p>
+            </li>
+            <li>
+                <img class="roadicon" src="./assets/worlddomination.png" alt="">
+                <h2 class="stroke-single" title="Little Lemon Brand">Little Lemon Brand</h2>
+                <p>Ongoing: Using ETH from the community wallet, a team of devs and artists will be formed to further expand the Little Lemons brand into something truly awesome.
+                    <br><br>Lemon merch/ physical collectibles, lemon juicing, animated series, etc.
+                </p>
+            </li>
+            <li>
+                <h2 class="stroke-single" title="World Domination.">World Domination.</h2>
+            </li>
+        
+           
+        </ul>
+    
+        <img class="lemon-world" src="./assets/lemonworld.png" alt="">
+        <img class="lemonsquad" src="./assets/lemonsquad.png" alt="">
+        <img class="roadmaptree" src="./assets/roadmaptree.png" alt="">
+    </section>
+    <section class="sec-8">
+        <h1>Lemon Team</h1>
+        <ul>
+            <li>
+                <img src="./assets/soniriprofilepic.png" alt="">
+                <h2>Sonirious</h2>
+                <p>Founder/Artist/Designer</p>
+                <ul>
+                    <li>
+                        <a href="https://twitter.com/sonirious"target="_blank">
+                            <img src="./assets/yellowtwittericon.png" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <img src="./assets/devprofilepic.png" alt="">
+                <h2>Burgah</h2>
+                <p>Solidity Dev</p>
+                <ul>
+                    <li>
+                        <a href="https://twitter.com/0xburgah"target="_blank">
+                            <img src="./assets/yellowtwittericon.png" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+    <footer>
+        <div class="footer-container">
+            <div class="left">
+                <p>© 2021 Little Lemon Friends </p>   
+            </div>
+            <div class="right">
+                <ul>
+                    <li>
+                        <a href="https://discord.gg/DnaFGpwCKQ"target="_blank">
+                            <img src="/assets/discordlogo.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/LittlelemonsNFT"target="_blank">
+                            <img src="./assets/twitterlogo.png" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="./rellax.min.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>
