@@ -453,7 +453,7 @@ header .social-icon img {
 .stroke-double:before {
   content: attr(title);
   position: absolute;
-  -webkit-text-stroke: 12px #fadd39; /* Chris Coyier's favorite color! */
+  -webkit-text-stroke: 12px #fadd39; 
   left: 0;
   z-index: -1;
   right: 0;
@@ -474,7 +474,7 @@ header .social-icon img {
 }
 
 .stroke-single:before {
-    -webkit-text-stroke: 12px #fadd39; /* Chris Coyier's favorite color! */
+    -webkit-text-stroke: 12px #fadd39; 
 }
 
 .stroke-single:after { 
@@ -936,7 +936,7 @@ header .social-icon img {
 
     .stroke-double:before,
     .stroke-double:after {
-        -webkit-text-stroke: 8px #948011;
+        -webkit-text-stroke: 8px #fadd39;
     }
 
     .stroke-single:before,
