@@ -453,7 +453,7 @@ header .social-icon img {
 .stroke-double:before {
   content: attr(title);
   position: absolute;
-  -webkit-text-stroke: 12px #FFE437; /* Chris Coyier's favorite color! */
+  -webkit-text-stroke: 12px #fadd39; /* Chris Coyier's favorite color! */
   left: 0;
   z-index: -1;
   right: 0;
@@ -465,7 +465,7 @@ header .social-icon img {
 .stroke-double:after {
   content: attr(title);
   position: absolute;
-  -webkit-text-stroke: 24px #FFE437;
+  -webkit-text-stroke: 24px #fadd39;
   left: 0;
   z-index: -2;
   right: 0;
@@ -474,11 +474,11 @@ header .social-icon img {
 }
 
 .stroke-single:before {
-    -webkit-text-stroke: 12px #FFE437; /* Chris Coyier's favorite color! */
+    -webkit-text-stroke: 12px #fadd39; /* Chris Coyier's favorite color! */
 }
 
 .stroke-single:after { 
-    -webkit-text-stroke: 12px #FFE437;
+    -webkit-text-stroke: 12px #fadd39;
 }
 
 .lemonsquad,
@@ -532,7 +532,7 @@ header .social-icon img {
     line-height: 6.6vw;
     letter-spacing: -0.045em;
     text-align: center;
-    color: #FFDE00;
+    color: #fadd39;
     margin-top: 1em;
 }
 
@@ -543,7 +543,7 @@ header .social-icon img {
     line-height: 3vw;
     letter-spacing: -0.045em;
     text-align: center;
-    color: #FFDE00;
+    color: #fadd39;
 }
 
 .sec-8 p {
@@ -835,12 +835,12 @@ header .social-icon img {
 
     .stroke-double:before,
     .stroke-double:after {
-        -webkit-text-stroke: 15px #FFE437;
+        -webkit-text-stroke: 15px #fadd39;
     }
 
     .stroke-single:before,
     .stroke-single:after {
-        -webkit-text-stroke: 6px #FFE437;
+        -webkit-text-stroke: 6px #fadd39;
     }
     
 }
@@ -936,12 +936,12 @@ header .social-icon img {
 
     .stroke-double:before,
     .stroke-double:after {
-        -webkit-text-stroke: 8px #FFE437;
+        -webkit-text-stroke: 8px #fadd39;
     }
 
     .stroke-single:before,
     .stroke-single:after {
-        -webkit-text-stroke: 4px #FFE437;
+        -webkit-text-stroke: 4px #fadd39;
     }
 
     footer .footer-container {
@@ -1203,7 +1203,7 @@ header .social-icon img {
     }
     .stroke-single:before,
     .stroke-single:after {
-        -webkit-text-stroke: 8px #FFE437;
+        -webkit-text-stroke: 8px #fadd39;
     }
 
 
