@@ -936,12 +936,12 @@ header .social-icon img {
 
     .stroke-double:before,
     .stroke-double:after {
-        -webkit-text-stroke: 8px #fadd39;
+        -webkit-text-stroke: 8px #948011;
     }
 
     .stroke-single:before,
     .stroke-single:after {
-        -webkit-text-stroke: 4px #fadd39;
+        -webkit-text-stroke: 4px #8a7811;
     }
 
     footer .footer-container {
