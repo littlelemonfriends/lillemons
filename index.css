@@ -453,7 +453,7 @@ header .social-icon img {
 .stroke-double:before {
   content: attr(title);
   position: absolute;
-  -webkit-text-stroke: 12px #f7dc46; 
+  -webkit-text-stroke: 12px #fad900; 
   left: 0;
   z-index: -1;
   right: 0;
@@ -465,7 +465,7 @@ header .social-icon img {
 .stroke-double:after {
   content: attr(title);
   position: absolute;
-  -webkit-text-stroke: 24px #f7dc46;
+  -webkit-text-stroke: 24px #fad900;
   left: 0;
   z-index: -2;
   right: 0;
@@ -474,11 +474,11 @@ header .social-icon img {
 }
 
 .stroke-single:before {
-    -webkit-text-stroke: 12px #f7dc46; 
+    -webkit-text-stroke: 12px #fad900; 
 }
 
 .stroke-single:after { 
-    -webkit-text-stroke: 12px #f7dc46;
+    -webkit-text-stroke: 12px #fad900;
 }
 
 .lemonsquad,
@@ -532,7 +532,7 @@ header .social-icon img {
     line-height: 6.6vw;
     letter-spacing: -0.045em;
     text-align: center;
-    color: #f7dc46;
+    color: #fad900;
     margin-top: 1em;
 }
 
@@ -543,7 +543,7 @@ header .social-icon img {
     line-height: 3vw;
     letter-spacing: -0.045em;
     text-align: center;
-    color: #f7dc46;
+    color: #fad900;
 }
 
 .sec-8 p {
@@ -835,12 +835,12 @@ header .social-icon img {
 
     .stroke-double:before,
     .stroke-double:after {
-        -webkit-text-stroke: 15px #f7dc46;
+        -webkit-text-stroke: 15px #fad900;
     }
 
     .stroke-single:before,
     .stroke-single:after {
-        -webkit-text-stroke: 6px #f7dc46;
+        -webkit-text-stroke: 6px #fad900;
     }
     
 }
@@ -936,12 +936,12 @@ header .social-icon img {
 
     .stroke-double:before,
     .stroke-double:after {
-        -webkit-text-stroke: 8px #f7dc46;
+        -webkit-text-stroke: 8px #fad900;
     }
 
     .stroke-single:before,
     .stroke-single:after {
-        -webkit-text-stroke: 4px #f7dc46;
+        -webkit-text-stroke: 4px #fad900;
     }
 
     footer .footer-container {
@@ -1203,7 +1203,7 @@ header .social-icon img {
     }
     .stroke-single:before,
     .stroke-single:after {
-        -webkit-text-stroke: 8px #f7dc46;
+        -webkit-text-stroke: 8px #fad900;
     }
 
 
