@@ -267,7 +267,7 @@ button {
 }
 
 .sec-4-container .left {
-    background: #FFC01E;
+    background: #fcb90f;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -484,7 +484,8 @@ header .social-icon img {
 .lemonsquad,
 .roadmaptree,
 .lemongiftrans,
-.cloud {
+.cloud,
+.bufflemon {
     position: absolute;
 }
 
@@ -501,15 +502,22 @@ header .social-icon img {
 }
 .lemonsquad {
     left: -1%;
-    top: 25%;
+    top: 17%;
     max-width: 21.7vw;
     z-index: 9;
 }
 
 .roadmaptree {
     right: 0;
-    top: 40%;
+    top: 35%;
     max-width: 44.5vw;
+    z-index: 9;
+}
+
+.bufflemon {
+    left: -3rem;
+    top: 57%;
+    max-width:44.5vw;
     z-index: 9;
 }
 
@@ -930,6 +938,11 @@ header .social-icon img {
         left: -6%;
     }
 
+    .bufflemon {
+        top: 70%;
+        left: -15%;
+    }
+
     .roadmaptree {
         top: 58%;
     }
@@ -1190,7 +1203,7 @@ header .social-icon img {
     }
 
     .lemonsquad {
-        top: 28%;
+        top: 26%;
     }
     .sec-2 img {
    
