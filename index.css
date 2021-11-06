@@ -502,7 +502,7 @@ header .social-icon img {
 }
 .lemonsquad {
     left: -1%;
-    top: 17%;
+    top: 57%;
     max-width: 21.7vw;
     z-index: 9;
 }
@@ -516,7 +516,7 @@ header .social-icon img {
 
 .bufflemon {
     left: -3rem;
-    top: 57%;
+    top: 17%;
     max-width:44.5vw;
     z-index: 9;
 }
@@ -827,7 +827,9 @@ header .social-icon img {
     .sec-1 .video-container video {
         top: 36%;
     }
-
+    .bufflemon {
+        max-width:35.5vw;
+    }
 }
 
 @media screen and (max-width: 1050px) {
@@ -840,7 +842,9 @@ header .social-icon img {
     .showcase {
         height: 100vh;
     }
-
+    .bufflemon {
+        max-width:34.5vw;
+    }
     .stroke-double:before,
     .stroke-double:after {
         -webkit-text-stroke: 15px #fad900;
@@ -933,12 +937,12 @@ header .social-icon img {
         max-width:100%;
         height:auto;
     }
-    .lemonsquad {
+    .bufflemon {
         top: 35%;
-        left: -6%;
+        left: -15%;
     }
 
-    .bufflemon {
+    .lemonsquad {
         top: 70%;
         left: -15%;
     }
@@ -1202,8 +1206,14 @@ header .social-icon img {
 
     }
 
+    .bufflemon {
+        top:26%;
+        max-width:45.5vw;
+    }
+
     .lemonsquad {
-        top: 26%;
+        top: 75%;
+        left: -10%;
     }
     .sec-2 img {
    
