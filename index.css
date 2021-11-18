@@ -267,7 +267,7 @@ button {
 }
 
 .sec-4-container .left {
-    background: #fcb90f;
+    background: #f8b304;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -1207,7 +1207,7 @@ header .social-icon img {
     }
 
     .bufflemon {
-        top:26%;
+        top:38%;
         max-width:45.5vw;
     }
 
