@@ -22,8 +22,6 @@
 html, body {
     scroll-behavior: smooth;
     overflow-x: hidden;
-    background: rgb(88,243,101);
-    background: linear-gradient(180deg, rgba(88,243,101,1) 0%, rgba(86,243,100,1) 14%, rgba(255,255,255,1) 14%);
 }
 
 :target:before {
