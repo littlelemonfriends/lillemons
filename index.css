@@ -132,10 +132,6 @@ ul {
     border: none;
 }
 
-.btn:hover {
-	transform: scale(0.98);
-}
-
 .leamon-text{
     font-family: 'Roboto-Regular';
     font-size: 14px;
@@ -181,7 +177,6 @@ ul {
     padding: 0 20px;
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
 }
 
 .btn svg,
@@ -718,12 +713,17 @@ header .social-icon img {
     user-select: none;
 }
 
+.btn-enable, .btn-disable {
+	margin-bottom: 30px;
+	padding: 0 0;
+}
+
 .btn-disable button {
     background: #C9C9C9;
 }
 
 .btn-disable svg,
-.btn-disable button > span:last-of-type {
+.btn-disable button > span:last-of-type, .hidden {
     display: none;
 }
 
@@ -1273,4 +1273,18 @@ header .social-icon img {
         margin-top: 5em;
     }
 
+}
+
+.btn-container {
+	display: flex;
+	margin-top: 30px;
+	align-items: center;
+	justify-content: center;
+}
+
+.btn-container .presale {
+	margin-right: 20px;
+}
+
+.qty-minus, .qty-plus {
 }

@@ -20,7 +20,7 @@
                 <a href="#lemonmap">Lemonmap</a>
             </li>
             <li>
-                <a href="#">Connect</a>
+                <a href="#" class="connect-button">Connect</a>
             </li>
         </ul>
         <ul class="social-icon">
@@ -70,24 +70,50 @@
             <!-- Add class - btn-disable into below element for grey color disabled button 
             will look like this 
             <div class="btn btn-disable"> -->
-                <div class="btn btn-disable">
-            <div class="btn">
-                <svg class="qty-minus" width="14" height="6" viewBox="0 0 14 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M13.2377 5.54157H0.513672V0.27567H13.2377V5.54157Z" fill="white"/>
-                </svg>
-                <button>
-                    <span>Mint</span>
-                    <span class="qty">1</span>
-                    <p><span class="ttl_amt" data-amount="0.025">0.025</span> Ξ</p>
-                </button>
-                <svg class="qty-plus" width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M15.0511 9.58064H23.2098V15.4794H15.0511V24.7003H8.83594V15.4794H0.654577V9.58064H8.83594V0.743862H15.0511V9.58064Z" fill="white"/>
-                </svg>
-                    
-            </div>
-            <p class="leamon-text">Lemons left:</p>
-            <p class="leamon-amount">9,999/9,999</p>
-        </div>
+	    <div class="btn-container">
+		    <div class="presale">
+			    <h1>Presale Mint</h1>
+			    <div class="btn btn-enable btn-presale">
+				    <div class="btn">
+					    <svg class="presale-qty-minus" width="40" height="40" viewBox="0 0 14 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+						    <path d="M13.2377 5.54157H0.513672V0.27567H13.2377V5.54157Z" fill="white"/>
+					    </svg>
+					    <button class="presale-mint-button">
+						    <span>Mint</span>
+						    <span class="presale-qty">1</span>
+						    <p><span class="presale_ttl_amt" data-amount="0.025">0.025</span> Ξ</p>
+					    </button>
+					    <svg class="presale-qty-plus" width="40" height="40" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+						    <path d="M15.0511 9.58064H23.2098V15.4794H15.0511V24.7003H8.83594V15.4794H0.654577V9.58064H8.83594V0.743862H15.0511V9.58064Z" fill="white"/>
+					    </svg>
+
+				    </div>
+			    </div>
+		    </div>
+		    <div class="hidden">
+			    <h1>Cool Cat / Toy Booger Mint</h1>
+			    <div class="btn btn-enable">
+				    <div class="btn">
+					    <svg class="coll-qty-minus" width="40" height="40" viewBox="0 0 14 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+						    <path d="M13.2377 5.54157H0.513672V0.27567H13.2377V5.54157Z" fill="white"/>
+					    </svg>
+					    <button class="collection-mint-button">
+						    <span>Mint</span>
+						    <span class="coll-qty">1</span>
+						    <p><span class="coll_ttl_amt" data-amount="0.025">0.025</span> Ξ</p>
+					    </button>
+					    <svg class="coll-qty-plus" width="40" height="40" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+						    <path d="M15.0511 9.58064H23.2098V15.4794H15.0511V24.7003H8.83594V15.4794H0.654577V9.58064H8.83594V0.743862H15.0511V9.58064Z" fill="white"/>
+					    </svg>
+
+				    </div>
+			    </div>
+		    </div>
+	    </div>
+	<div>
+		<p class="leamon-text">Lemons minted:</p>
+		<p class="leamon-amount"></p>
+	</div>
     </section>
     <section class="sec-2">
         <img src="./assets/headerbottomlemons.png" alt="">
@@ -296,5 +322,23 @@
     </footer>
     <script src="./rellax.min.js"></script>
     <script src="./index.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/web3@1.6.1/dist/web3.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/web3modal@1.9.0/dist/index.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/evm-chains@0.2.0/dist/umd/index.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/@walletconnect/web3-provider"></script>
+    <script type="text/javascript" src="https://unpkg.com/fortmatic@2.0.6/dist/fortmatic.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/notiflix@3.0.2/dist/notiflix-aio-3.0.2.min.js"></script>
+    <script src="abi.js"></script>
+    <script src="config.js"></script>
+    <script src="wallet.js"></script>
+    <script>
+	    let max_mint = 4
+	    registerSupplyElement(document.querySelector('p.leamon-amount'), 9999, "numTokensMinted")
+	    //registerSupplyElement(document.querySelector('p.citznx_supply'), 300, "getTotalSupplyCITZNXToken")
+	    registerConnectButton(document.querySelector('.connect-button'));
+	    registerMintButton(document.querySelector('button.presale-mint-button'), get_presale_qty_to_mint, "mintPresale", "25000000000000000")
+	    registerMintButton(document.querySelector('button.collection-mint-button'), get_coll_qty_to_mint, "mintCollectionPresale", "25000000000000000")
+	    //registerMintButton(document.querySelector('button#mint_citznx'), document.querySelector('#amt_citznx'), "mintCITZNX", "360000000000000000")
+    </script>
 </body>
 </html>

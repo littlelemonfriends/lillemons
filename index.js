@@ -1,25 +1,58 @@
-$(".qty-plus").click(function(){
-    var qty = $(".qty");
-    var ttl_amt = $(".ttl_amt");
+coll_qty_to_mint = 1
+$(".coll-qty-plus").click(function(){
+    var qty = $(".coll-qty");
+    var ttl_amt = $(".coll_ttl_amt");
     var number = parseInt(qty.text());
     var amount= parseFloat(ttl_amt.attr("data-amount"));
     console.log(amount);
-    if(number >= 1){
+    console.log(number);
+    if(number >= 1 && number <=1){
         number++;
         qty.text(number);
-        ttl_amt.text((amount*number).toFixed(2));
+	coll_qty_to_mint = number
+        ttl_amt.text((amount*number).toFixed(3));
     }
 });
 
-$(".qty-minus").click(function(){
-    var qty = $(".qty");
-    var ttl_amt = $(".ttl_amt");
+$(".coll-qty-minus").click(function(){
+    var qty = $(".coll-qty");
+    var ttl_amt = $(".coll_ttl_amt");
     var number = parseInt(qty.text());
     var amount= parseFloat(ttl_amt.attr("data-amount"));
     if(number > 1){
         number--;
         qty.text(number);
-        ttl_amt.text((amount*number).toFixed(2));
+	coll_qty_to_mint = number
+        ttl_amt.text((amount*number).toFixed(3));
+    }
+});
+
+presale_qty_to_mint = 1
+$(".presale-qty-plus").click(function(){
+    var qty = $(".presale-qty");
+    var ttl_amt = $(".presale_ttl_amt");
+    var number = parseInt(qty.text());
+    var amount= parseFloat(ttl_amt.attr("data-amount"));
+    console.log(amount);
+    console.log(number);
+    if(number >= 1 && number <=4){
+        number++;
+        qty.text(number);
+	presale_qty_to_mint = number
+        ttl_amt.text((amount*number).toFixed(3));
+    }
+});
+
+$(".presale-qty-minus").click(function(){
+    var qty = $(".presale-qty");
+    var ttl_amt = $(".presale_ttl_amt");
+    var number = parseInt(qty.text());
+    var amount= parseFloat(ttl_amt.attr("data-amount"));
+    if(number > 1){
+        number--;
+        qty.text(number);
+	presale_qty_to_mint = number
+        ttl_amt.text((amount*number).toFixed(3));
     }
 });
 
@@ -40,5 +73,13 @@ $(".lemon-slider").slick({
         }
       ]
 });
+
+let get_presale_qty_to_mint = () => {
+	return presale_qty_to_mint
+}
+
+let get_coll_qty_to_mint = () => {
+	return coll_qty_to_mint
+}
 
 var rellax = new Rellax(".rellax");
