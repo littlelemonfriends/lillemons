@@ -142,8 +142,8 @@ let getIsPresaleActive = async () => {
 }
 
 let checkIsOnWhitelist = async () => {
-	//let res = await contract.methods['presaleWalletList'](accountData.account).call()
-	let res = await contract.methods['presaleWalletList']('0x08c3d4a4fe4e28f4ea0402fccf35d5b81e8f1ec8').call()
+	let res = await contract.methods['presaleWalletList'](accountData.account).call()
+	//let res = await contract.methods['presaleWalletList']('0x08c3d4a4fe4e28f4ea0402fccf35d5b81e8f1ec8').call()
 	console.log(res)
 	return res
 }
