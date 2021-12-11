@@ -168,9 +168,10 @@ let checkIsOnWhitelist = async () => {
 }
 
 let checkIsOnCollection = async () => {
+	return true
 	try {
-		let res = await contract.methods['qualifyForCollectionPresaleMint'](accountData.account).call()
-		//let res = await contract.methods['qualifyForCollectionPresaleMint']('0x08c3d4a4fe4e28f4ea0402fccf35d5b81e8f1ec8').call()
+		//let res = await contract.methods['qualifyForCollectionPresaleMint'](accountData.account).call()
+		//let res = await contract.methods['qualifyForCollectionPresaleMint']('0xE83662f74a5961436490cc88417a107CF06a175a').call()
 		console.log(res)
 		return res
 	} catch(e) {
