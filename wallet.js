@@ -57,17 +57,30 @@ let connectWallet = async () => {
 	await verifySetup()
 	console.log(accountData)
 	let onWhitelist = await checkIsOnWhitelist()
+	let onCollection = await checkIsOnCollection()
+	if(!onCollection) {
+		document.querySelector('.btn-collection').classList.remove('btn-enable')
+		document.querySelector('.btn-collection').classList.add('btn-disable')
+		//Notiflix.Notify.failure('You are not on the presale whitelist!');
+	}
 	if(!onWhitelist) {
 		document.querySelector('.btn-presale').classList.remove('btn-enable')
 		document.querySelector('.btn-presale').classList.add('btn-disable')
 		Notiflix.Notify.failure('You are not on the presale whitelist!');
 	}
+
 	provider.on("accountsChanged", async (accounts) => {
 		if(accounts.length == 0) return;
 		accountData = await getAccountData()
 		await verifySetup()
 		console.log(accountData)
 		let onWhitelist = await checkIsOnWhitelist()
+		let onCollection = await checkIsOnCollection()
+		if(!onCollection) {
+			document.querySelector('.btn-collection').classList.remove('btn-enable')
+			document.querySelector('.btn-collection').classList.add('btn-disable')
+			//Notiflix.Notify.failure('You are not on the presale whitelist!');
+		}
 		if(!onWhitelist) {
 			document.querySelector('.btn-presale').classList.remove('btn-enable')
 			document.querySelector('.btn-presale').classList.add('btn-disable')
@@ -80,6 +93,12 @@ let connectWallet = async () => {
 		await verifySetup()
 		console.log(accountData)
 		let onWhitelist = await checkIsOnWhitelist()
+		let onCollection = await checkIsOnCollection()
+		if(!onCollection) {
+			document.querySelector('.btn-collection').classList.remove('btn-enable')
+			document.querySelector('.btn-collection').classList.add('btn-disable')
+			//Notiflix.Notify.failure('You are not on the presale whitelist!');
+		}
 		if(!onWhitelist) {
 			document.querySelector('.btn-presale').classList.remove('btn-enable')
 			document.querySelector('.btn-presale').classList.add('btn-disable')
@@ -146,6 +165,16 @@ let checkIsOnWhitelist = async () => {
 	//let res = await contract.methods['presaleWalletList']('0x08c3d4a4fe4e28f4ea0402fccf35d5b81e8f1ec8').call()
 	console.log(res)
 	return res
+}
+
+let checkIsOnCollection = async () => {
+	try {
+		let res = await contract.methods['qualifyForCollectionPresaleMint'](accountData.account).call()
+		//let res = await contract.methods['qualifyForCollectionPresaleMint']('0x08c3d4a4fe4e28f4ea0402fccf35d5b81e8f1ec8').call()
+		console.log(res)
+		return res
+	} catch(e) {
+	}
 }
 
 let checkGasEstimateAndErrors = async (func, params, obj) => {
