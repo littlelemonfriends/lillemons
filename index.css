@@ -1288,3 +1288,14 @@ header .social-icon img {
 
 .qty-minus, .qty-plus {
 }
+
+@media only screen and (max-width: 800px) {
+	.btn-container {
+		flex-direction: column;
+	}
+	.btn-container .presale {
+		margin-right: 0;
+	}
+}
+
+
