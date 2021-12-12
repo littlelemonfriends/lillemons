@@ -71,7 +71,26 @@
             will look like this 
             <div class="btn btn-disable"> -->
 	    <div class="btn-container">
-		    <div class="presale">
+		    <div class="public">
+			    <h1>Public Mint</h1>
+			    <div class="btn btn-enable btn-public">
+				    <div class="btn">
+					    <svg class="public-qty-minus" width="40" height="40" viewBox="0 0 14 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+						    <path d="M13.2377 5.54157H0.513672V0.27567H13.2377V5.54157Z" fill="white"/>
+					    </svg>
+					    <button class="public-mint-button">
+						    <span>Mint</span>
+						    <span class="public-qty">1</span>
+						    <p><span class="public_ttl_amt" data-amount="0.025">0.025</span> Ξ</p>
+					    </button>
+					    <svg class="public-qty-plus" width="40" height="40" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+						    <path d="M15.0511 9.58064H23.2098V15.4794H15.0511V24.7003H8.83594V15.4794H0.654577V9.58064H8.83594V0.743862H15.0511V9.58064Z" fill="white"/>
+					    </svg>
+
+				    </div>
+			    </div>
+		    </div>
+		    <div class="presale hidden">
 			    <h1>Presale Mint</h1>
 			    <div class="btn btn-enable btn-presale">
 				    <div class="btn">
@@ -90,7 +109,7 @@
 				    </div>
 			    </div>
 		    </div>
-		    <div class="collection">
+		    <div class="collection hidden">
 			    <h1>Cool Cat Mint</h1>
 			    <div class="btn btn-enable btn-collection">
 				    <div class="btn">
@@ -110,13 +129,16 @@
 			    </div>
 		    </div>
 	    </div>
-	<div>
-		<p>Only Presale Whitelisted and Cool Cat holders can mint at this time. <br>Check Discord if you're a Toy Booger holder.</p>
-		<br>
-		
-		<p class="leamon-text">Lemons minted:</p>
-		<p class="leamon-amount"></p>
-	</div>
+	    <div class="text-cont">
+		    <div class="total-supply">
+			    <p class="leamon-text">Lemons minted:</p>
+			    <p class="leamon-amount"></p>
+		    </div>
+		    <div>
+			    <p class="leamon-text">Your Lemons:</p>
+			    <p class="wallet-amount"></p>
+		    </div>
+	    </div>
     </section>
     <section class="sec-2">
         <img src="./assets/headerbottomlemons.png" alt="">
@@ -337,11 +359,11 @@
     <script>
 	    let max_mint = 4
 	    registerSupplyElement(document.querySelector('p.leamon-amount'), 9999, "numTokensMinted")
-	    //registerSupplyElement(document.querySelector('p.citznx_supply'), 300, "getTotalSupplyCITZNXToken")
+	    registerBalanceElement(document.querySelector('p.wallet-amount'), 15, "balanceOf")
 	    registerConnectButton(document.querySelector('.connect-button'));
+	    registerMintButton(document.querySelector('button.public-mint-button'), get_pub_qty_to_mint, "mintLemons", "25000000000000000")
 	    registerMintButton(document.querySelector('button.presale-mint-button'), get_presale_qty_to_mint, "mintPresale", "25000000000000000")
 	    registerMintButton(document.querySelector('button.collection-mint-button'), get_coll_qty_to_mint, "mintCollectionPresale", "25000000000000000")
-	    //registerMintButton(document.querySelector('button#mint_citznx'), document.querySelector('#amt_citznx'), "mintCITZNX", "360000000000000000")
     </script>
 </body>
 </html>

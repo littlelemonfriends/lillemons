@@ -1,3 +1,32 @@
+pub_qty_to_mint = 1
+$(".public-qty-plus").click(function(){
+    var qty = $(".public-qty");
+    var ttl_amt = $(".public_ttl_amt");
+    var number = parseInt(qty.text());
+    var amount= parseFloat(ttl_amt.attr("data-amount"));
+    console.log(amount);
+    console.log(number);
+    if(number >= 1 && number <=4){
+        number++;
+        qty.text(number);
+	pub_qty_to_mint = number
+        ttl_amt.text((amount*number).toFixed(3));
+    }
+});
+
+$(".public-qty-minus").click(function(){
+    var qty = $(".public-qty");
+    var ttl_amt = $(".public_ttl_amt");
+    var number = parseInt(qty.text());
+    var amount= parseFloat(ttl_amt.attr("data-amount"));
+    if(number > 1){
+        number--;
+        qty.text(number);
+	pub_qty_to_mint = number
+        ttl_amt.text((amount*number).toFixed(3));
+    }
+});
+
 coll_qty_to_mint = 1
 $(".coll-qty-plus").click(function(){
     var qty = $(".coll-qty");
@@ -80,6 +109,10 @@ let get_presale_qty_to_mint = () => {
 
 let get_coll_qty_to_mint = () => {
 	return coll_qty_to_mint
+}
+
+let get_pub_qty_to_mint = () => {
+	return pub_qty_to_mint
 }
 
 var rellax = new Rellax(".rellax");

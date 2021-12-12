@@ -47,63 +47,29 @@ let connectWallet = async () => {
 		web3 = new Web3(provider)
 		contract = new web3.eth.Contract(abi, config.contract.contract_address)
 		getTotalSupplyInterval()
-		supplyInterval = setInterval(getTotalSupplyInterval, 10000)
+		supplyInterval = setInterval(getTotalSupplyInterval, 30000)
 	} catch(e) {
 		console.log(e)
 		if(e) Notiflix.Notify.failure(e);
 		//return
 	}
 	accountData = await getAccountData()
+	getBalanceInterval()
+	balanceInterval = setInterval(getBalanceInterval, 30000)
 	await verifySetup()
 	console.log(accountData)
-	let onWhitelist = await checkIsOnWhitelist()
-	let onCollection = await checkIsOnCollection()
-	if(!onCollection) {
-		document.querySelector('.btn-collection').classList.remove('btn-enable')
-		document.querySelector('.btn-collection').classList.add('btn-disable')
-		//Notiflix.Notify.failure('You are not on the presale whitelist!');
-	}
-	if(!onWhitelist) {
-		document.querySelector('.btn-presale').classList.remove('btn-enable')
-		document.querySelector('.btn-presale').classList.add('btn-disable')
-		Notiflix.Notify.failure('You are not on the presale whitelist!');
-	}
 
 	provider.on("accountsChanged", async (accounts) => {
 		if(accounts.length == 0) return;
 		accountData = await getAccountData()
 		await verifySetup()
 		console.log(accountData)
-		let onWhitelist = await checkIsOnWhitelist()
-		let onCollection = await checkIsOnCollection()
-		if(!onCollection) {
-			document.querySelector('.btn-collection').classList.remove('btn-enable')
-			document.querySelector('.btn-collection').classList.add('btn-disable')
-			//Notiflix.Notify.failure('You are not on the presale whitelist!');
-		}
-		if(!onWhitelist) {
-			document.querySelector('.btn-presale').classList.remove('btn-enable')
-			document.querySelector('.btn-presale').classList.add('btn-disable')
-			Notiflix.Notify.failure('You are not on the presale whitelist!');
-		}
 	})
 	provider.on("chainChanged", async (accounts) => {
 		if(accounts.length == 0) return;
 		accountData = await getAccountData()
 		await verifySetup()
 		console.log(accountData)
-		let onWhitelist = await checkIsOnWhitelist()
-		let onCollection = await checkIsOnCollection()
-		if(!onCollection) {
-			document.querySelector('.btn-collection').classList.remove('btn-enable')
-			document.querySelector('.btn-collection').classList.add('btn-disable')
-			//Notiflix.Notify.failure('You are not on the presale whitelist!');
-		}
-		if(!onWhitelist) {
-			document.querySelector('.btn-presale').classList.remove('btn-enable')
-			document.querySelector('.btn-presale').classList.add('btn-disable')
-			Notiflix.Notify.failure('You are not on the presale whitelist!');
-		}
 	})
 	Notiflix.Notify.success('Connected Wallet');
 }
@@ -117,6 +83,34 @@ let getTotalSupplyInterval = async () => {
 		try {
 			res = await contract.methods[s.supply_func]().call()
 		} catch(e) {
+			return
+		}
+		if(res) {
+			console.log('total supply', res)
+			if(s.element) { 
+				console.log(total_amt)
+				let amt_left = s.total_amt - res
+				if(s.total_amt) {
+					s.element.innerText = `${res} / ${s.total_amt}`
+					//s.element.innerText = `${amt_left} left`
+				} else {
+					s.element.innerText = `Amount minted: ${res}`
+				}
+			}
+		}
+	})
+}
+
+let balances = []
+let getBalanceInterval = async () => {
+	balances.forEach(async (s) => {
+		if(!contract) return;
+		let res;
+		try {
+			res = await contract.methods[s.supply_func](accountData.account).call()
+			console.log(res)
+		} catch(e) {
+			console.log(e)
 			return
 		}
 		if(res) {
@@ -170,7 +164,7 @@ let checkIsOnWhitelist = async () => {
 let checkIsOnCollection = async () => {
 	return true
 	try {
-		//let res = await contract.methods['qualifyForCollectionPresaleMint'](accountData.account).call()
+		let res = await contract.methods['qualifyForCollectionPresaleMint'](accountData.account).call()
 		//let res = await contract.methods['qualifyForCollectionPresaleMint']('0xE83662f74a5961436490cc88417a107CF06a175a').call()
 		console.log(res)
 		return res
@@ -226,6 +220,14 @@ let registerSupplyElement = async (element, total_amt_, supplyFunc) => {
 	//getTotalSupplyInterval(element, total_amt_, supplyFunc)
 }
 
+let registerBalanceElement = async (element, total_amt_, supplyFunc) => {
+	console.log(total_amt)
+	supplyElement = element
+	total_amt = total_amt_
+	balances.push({ element: element, total_amt: total_amt_, supply_func: supplyFunc })
+	//getTotalSupplyInterval(element, total_amt_, supplyFunc)
+}
+
 let registerConnectButton = async (element) => {
 	element.addEventListener('click', connectWallet)
 }
@@ -235,6 +237,7 @@ let registerMintButton = async (element, amt_element, mintFunc, price) => {
 	element.addEventListener('click', async () => {
 		console.log('clicked')
 		let err = false
+		console.log(amt_element())
 		if(!amt_element) {
 			console.log(amt_element)
 			err = await checkGasEstimateAndErrors(mintFunc, false, { from: accountData.account, value: price })

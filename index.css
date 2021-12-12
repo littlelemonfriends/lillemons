@@ -132,7 +132,7 @@ ul {
     border: none;
 }
 
-.leamon-text{
+.leamon-text {
     font-family: 'Roboto-Regular';
     font-size: 14px;
     font-style: normal;
@@ -142,7 +142,7 @@ ul {
     text-align: center;
 }
 
-.leamon-amount {
+.leamon-amount, .wallet-amount {
     font-family: 'Roboto Bold';
     font-size: 24px;
     font-style: normal;
@@ -1287,6 +1287,16 @@ header .social-icon img {
 }
 
 .qty-minus, .qty-plus {
+}
+
+.text-cont {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.total-supply {
+	margin-right: 40px;
 }
 
 @media only screen and (max-width: 800px) {
