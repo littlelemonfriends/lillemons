@@ -1277,6 +1277,7 @@ header .social-icon img {
 
 .btn-container {
 	display: flex;
+	flex-direction: column;
 	margin-top: 30px;
 	align-items: center;
 	justify-content: center;
@@ -1308,4 +1309,18 @@ header .social-icon img {
 	}
 }
 
+.sold-out {
+	font-size: 48px;
+	display: block;
+	margin-bottom: 20px;
+}
 
+.opensea {
+	display: block;
+	background-color: #1F76D9;
+	color: white;
+	border-radius: 20px;
+	height: 40px;
+	line-height: 6px;
+	padding: 20px 30px;
+}
