@@ -280,4 +280,4 @@ let registerContractButton = async (element, address, abi, method, params, cb) =
 	//element.addEventListener('click', connectWallet)
 }
 
-window.addEventListener('load', connectWallet)
+//window.addEventListener('load', connectWallet)
