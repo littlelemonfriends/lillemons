@@ -75,6 +75,7 @@ ul {
     cursor: pointer;
 }
 
+
 .video-container video {
 	min-width: 100%;
 	min-height: 100%;
@@ -302,8 +303,18 @@ footer .footer-container {
     padding: 0 95px;
 }
 
+
 footer .footer-container .left p {
     font-size: 39px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 46px;
+    letter-spacing: -0.045em;
+    color: #fff;
+}
+
+footer .footer-container .corp p {
+    font-size: 20px;
     font-style: normal;
     font-weight: 700;
     line-height: 46px;
@@ -321,6 +332,10 @@ footer .footer-container ul li img {
 
 footer .footer-container ul li + li {
     margin-left: 83px;
+}
+
+footer .footeritemss p {
+    color: #FFFFFF;
 }
 
 header {
@@ -909,7 +924,9 @@ header .social-icon img {
         width: 70%;
     }
 
-
+    .right {
+        max-width: 20em;
+    }
     .sec-3-container .right,
     .sec-3-container .left img, 
     .sec-4-container .left img,
@@ -1030,6 +1047,10 @@ header .social-icon img {
 
     .sec-7 ul li {
         margin: 3em 0 3em;
+    }
+
+    .sec-8 {
+        margin-top: 2em;
     }
 
     .sec-8 {
@@ -1322,5 +1343,5 @@ header .social-icon img {
 	border-radius: 20px;
 	height: 40px;
 	line-height: 6px;
-	padding: 20px 30px;
+	padding: 17px 30px;
 }
