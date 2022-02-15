@@ -1,371 +1,884 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Little Lemon Friends</title>
-    <link rel="stylesheet" href="./index.css">
+    <link rel="shortcut icon" href="./assets/origin.png" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body>
-    <header>
-        <ul class="main-menu">
-            <li>
-                <a href="#about">About</a>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+      integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+      integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- bootstrap -->
+    <link
+      href="./third-party/bootstrap-5.1.3-dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="./third-party/swiper-7/swiper-7-4-1.css"
+      type="text/css"
+    />
+
+    <link rel="stylesheet" href="./styles/index.css" type="text/css" />
+  </head>
+  <body>
+    <div class="popup-dialog d-none">
+      <div class="popup-block" data-dialog-number="1">
+        <div class="text-block">
+          <h3 class="subtitle">Alfie the Adventurer</h3>
+          <div class="text-block-inner">
+            <h1 class="title">
+              Hey there!~<br />
+              don’t think we’ve <br />
+              met before.
+            </h1>
+            <p class="instruction">Click Anywhere to continue</p>
+          </div>
+        </div>
+      </div>
+      <div class="popup-block d-none" data-dialog-number="2">
+        <div class="text-block">
+          <h3 class="subtitle">Alfie the Adventurer</h3>
+          <div class="text-block-inner">
+            <h1 class="title">
+              My name is Alfie and I like <br />
+              going on adventures!
+            </h1>
+            <p class="instruction">Click Anywhere to continue</p>
+          </div>
+        </div>
+      </div>
+      <div class="popup-block d-none" data-dialog-number="3">
+        <div class="text-block">
+          <h3 class="subtitle">Alfie the Adventurer</h3>
+          <div class="text-block-inner">
+            <h1 class="title">
+              Recently I was exploring a forest and I discovered something
+              really weird...
+            </h1>
+            <p class="instruction">Click Anywhere to continue</p>
+          </div>
+        </div>
+      </div>
+      <div class="popup-block d-none" data-dialog-number="4">
+        <div class="text-block">
+          <h3 class="subtitle">Alfie the Adventurer</h3>
+          <div class="text-block-inner">
+            <h1 class="title">Follow me and<br />I’ll show you! :D</h1>
+            <p class="instruction">Choose option</p>
+          </div>
+
+          <a href="./ancientruins.html" class="btn btn-green">Follow Alfie</a>
+          <a href="#" class="btn btn-red ignore-alfie">Ignore</a>
+        </div>
+      </div>
+      <div class="popup-block d-none ignore-alfie-block">
+        <div class="text-block">
+          <h3 class="subtitle">Alfie the Adventurer</h3>
+          <div class="text-block-inner">
+            <h1 class="title">:'c</h1>
+            <p class="instruction">Click Anywhere to continue</p>
+          </div>
+        </div>
+      </div>
+
+      <img class="popup-lemon" src="./assets/adventuresit.png" alt="..." />
+    </div>
+    <div class="wrapper">
+      <header>
+        <nav class="navbar navbar-expand-lg fixed-top">
+          <div class="container-fluid">
+            <button
+              class="navbar-toggler ms-auto"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasNavbar"
+              aria-controls="offcanvasNavbar"
+            >
+              <img width="35" src="./assets/navbar-btn.svg" alt="..." />
+            </button>
+            <div
+              class="offcanvas offcanvas-top"
+              tabindex="-1"
+              id="offcanvasNavbar"
+              aria-labelledby="offcanvasNavbarLabel"
+            >
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                  <span
+                    class="stroke-single nav-link-text text-white"
+                    title="Menu"
+                  >
+                    Menu
+                  </span>
+                </h5>
+                <button
+                  type="button"
+                  class="navbar-toggler ms-auto"
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                >
+                  <img width="35" src="./assets/navbar-btn.svg" alt="..." />
+                </button>
+              </div>
+              <div class="offcanvas-body mt-4 mt-lg-0">
+                <div class="navbar-nav mt-1 mx-xl-auto mb-2 mb-lg-0">
+                  <div class="main-menu">
+                    <ul class="d-lg-flex mb-0 ps-0">
+                      <li>
+                        <a class="nav-link link-news">
+                          <img
+                            class="nav-link-icon link-news-icon"
+                            src="./assets/Newsblk.png"
+                            alt="..."
+                          />
+
+                          <p class="stroke-single nav-link-text" title="News">
+                            News
+                          </p>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="nav-link link-lemonmap" href="#lemonmap">
+                          <img
+                            class="nav-link-icon link-lemonmap-icon"
+                            src="./assets/LemonmapIcon.png"
+                            alt="..."
+                          />
+
+                          <p
+                            class="stroke-single nav-link-text"
+                            title="Lemonmap"
+                          >
+                            Lemonmap
+                          </p>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="nav-link link-about" href="#about">
+                          <img
+                            class="nav-link-icon link-about-icon"
+                            src="./assets/AboutIcon.png"
+                            alt="..."
+                          />
+
+                          <p class="stroke-single nav-link-text" title="About">
+                            About
+                          </p>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          class="nav-link link-store"
+                          href="https://shop.littlelemonfriendsnft.com/"
+                        >
+                          <img
+                            class="nav-link-icon link-store-icon"
+                            src="./assets/StoreIcon.png"
+                            alt="..."
+                          />
+
+                          <p class="stroke-single nav-link-text" title="Store">
+                            Store
+                          </p>
+                        </a>
+                      </li>
+                      <li class="d-flex d-lg-none justify-content-center">
+                        <a
+                          class="btn btn-connect nav-link text-decoration-none disabled"
+                        >
+                          Connect
+                        </a>
+                      </li>
+                      <li class="d-flex d-lg-none justify-content-center">
+                        <div
+                          class="social-icon-sm d-flex justify-content-around"
+                        >
+                          <a href="#">
+                            <img
+                              width="43"
+                              src="./assets/twitterlogo.png"
+                              alt="twitter"
+                            />
+                          </a>
+                          <a href="#">
+                            <img
+                              width="43"
+                              src="./assets/os.svg"
+                              alt="twitter"
+                            />
+                          </a>
+                          <a href="#">
+                            <img
+                              width="43"
+                              src="./assets/discordlogo.svg"
+                              alt="twitter"
+                            />
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        <div class="d-flex justify-content-end">
+          <ul class="social-icon justify-content-center align-items-center p-0">
+            <li class="d-none d-lg-block mt-1 pt-1">
+              <a class="btn btn-connect nav-link text-decoration-none">
+                Connect
+              </a>
+            </li>
+            <li class="d-none d-lg-block">
+              <a href="https://discord.gg/DnaFGpwCKQ" target="_blank">
+                <img src="./assets/discordlogo.png" alt="" />
+              </a>
+            </li>
+            <li class="d-none d-lg-block">
+              <a href="https://twitter.com/LittlelemonsNFT" target="_blank">
+                <img src="./assets/twitterlogo.png" alt="" />
+              </a>
+            </li>
+            <li class="d-none d-lg-block">
+              <a href="#">
+                <img width="43" src="./assets/os.svg" alt="twitter" />
+              </a>
             </li>
             <li>
-                <a href="#lemonmap">Lemonmap</a>
+              <img src="./assets/nomusic.png" id="icon" alt="nomusic" />
             </li>
-            <li>
-                <a href="#" class="connect-button">Connect</a>
-            </li>
-        </ul>
-        <ul class="social-icon">
-            <li>
-                <a href="https://discord.gg/DnaFGpwCKQ"target="_blank">
-                    
-                    <img src="./assets/discordlogo.png" alt="">
-                </a>
-            </li>
-            <li>
-                <a href="https://twitter.com/LittlelemonsNFT"target="_blank">
-                    <img src="./assets/twitterlogo.png" alt="">
-                </a>
-            </li>
-            <li>
-                    <img src="./assets/nomusic.png" id="icon">
-                </a>
-            </li>
-        </ul>
+          </ul>
+        </div>
+
         <audio id="mySong">
-            <source src="./assets/song.mp3" type="audio/mp3">
+          <source src="./assets/song.mp3" type="audio/mp3" />
         </audio>
 
         <script>
-            var mySong = document.getElementById("mySong");
-            var icon = document.getElementById("icon");
-            
-            icon.onclick = function(){
-                if(mySong.paused){
-                    mySong.play();
-                    icon.src = "./assets/music.png";
-                }else{
-                    mySong.pause();
-                    icon.src = "./assets/nomusic.png"
-                }
-            }
-        </script>
+          var mySong = document.getElementById("mySong");
+          var icon = document.getElementById("icon");
 
-    </header>
-    <section class="showcase sec-1">
+          icon.onclick = function () {
+            if (mySong.paused) {
+              mySong.play();
+              icon.src = "./assets/music.png";
+            } else {
+              mySong.pause();
+              icon.src = "./assets/nomusic.png";
+            }
+          };
+        </script>
+      </header>
+      <section class="showcase sec-1">
         <div class="video-container">
-            <img class="mobiletree" src="./assets/stilltree.png">
-            <video class="videotree" src="./assets/headertreebg.mp4" autoplay muted loop></video>
+          <img
+            class="mobiletree"
+            src="./assets/stilltree.png"
+            alt="mobiletree"
+          />
+          <video
+            class="videotree"
+            src="./assets/headertreebg.mp4"
+            autoplay
+            muted
+            loop
+            type="video/mp4"
+          ></video>
         </div>
         <div class="content">
-            <img class="title"src="./assets/title2.png" alt="">
-            <!-- Add class - btn-disable into below element for grey color disabled button 
+          <div class="main-title">
+            <img
+              class="main-title-text d-md-none d-xxl-block"
+              src="./assets/title2.png"
+              alt="..."
+            />
+            <img
+              width="100"
+              class="main-title-img d-none d-md-block d-xxl-none mt-2"
+              src="./assets/origin.png"
+              alt="..."
+            />
+          </div>
+          <button
+            id="btnAdventureLemon"
+            class="btn btn-adventureLemon border-0"
+          >
+            <img
+              class="adventureLemon d-none d-md-block"
+              src="./assets/yreuk.gif"
+              alt="..."
+            />
+          </button>
+          <!-- Add class - btn-disable into below element for grey color disabled button 
             will look like this 
             <div class="btn btn-disable"> -->
-	    <div class="btn-container">
-			    <h1 class="sold-out">SOLD OUT!</h1>
-			    <a class="opensea" href="https://opensea.io/collection/little-lemon-friends">OpenSea</a>
-		    <div class="public hidden">
-			    <h1>Public Mint</h1>
-			    <div class="btn btn-disable btn-public">
-				    <div class="btn">
-					    <svg class="public-qty-minus" width="40" height="40" viewBox="0 0 14 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-						    <path d="M13.2377 5.54157H0.513672V0.27567H13.2377V5.54157Z" fill="white"/>
-					    </svg>
-					    <button class="public-mint-button">
-						    <span>Mint</span>
-						    <span class="public-qty">1</span>
-						    <p><span class="public_ttl_amt" data-amount="0.025">0.025</span> Ξ</p>
-					    </button>
-					    <svg class="public-qty-plus" width="40" height="40" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-						    <path d="M15.0511 9.58064H23.2098V15.4794H15.0511V24.7003H8.83594V15.4794H0.654577V9.58064H8.83594V0.743862H15.0511V9.58064Z" fill="white"/>
-					    </svg>
 
-				    </div>
-			    </div>
-		    </div>
-		    <div class="presale hidden">
-			    <h1>Presale Mint</h1>
-			    <div class="btn btn-enable btn-presale">
-				    <div class="btn">
-					    <svg class="presale-qty-minus" width="40" height="40" viewBox="0 0 14 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-						    <path d="M13.2377 5.54157H0.513672V0.27567H13.2377V5.54157Z" fill="white"/>
-					    </svg>
-					    <button class="presale-mint-button">
-						    <span>Mint</span>
-						    <span class="presale-qty">1</span>
-						    <p><span class="presale_ttl_amt" data-amount="0.025">0.025</span> Ξ</p>
-					    </button>
-					    <svg class="presale-qty-plus" width="40" height="40" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-						    <path d="M15.0511 9.58064H23.2098V15.4794H15.0511V24.7003H8.83594V15.4794H0.654577V9.58064H8.83594V0.743862H15.0511V9.58064Z" fill="white"/>
-					    </svg>
+          <div class="swiper-container">
+            <img
+              class="billboard"
+              src="./assets/bilbaord.png"
+              alt="billboard"
+            />
+            <!-- Swiper -->
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide slide-1">
+                  <img
+                    src="assets/Placeholderimage.png"
+                    alt="..."
+                  />
+                </div>
+             
+              </div>
+            </div>
+            <div class="swiper-button-next">
+              <img src="./assets/arrow-next.svg" alt="arrow prev" />
+            </div>
+            <div class="swiper-button-prev">
+              <img src="./assets/arrow-next.svg" alt="arrow next" />
+            </div>
+          </div>
+          <div class="btn-container">
+            <!-- <h1 class="sold-out">SOLD OUT!</h1>
+          <a
+            class="opensea"
+            href="https://opensea.io/collection/little-lemon-friends"
+            >OpenSea</a
+          > -->
+            <div class="public hidden">
+              <h1>Public Mint</h1>
+              <div class="btn btn-disable btn-public">
+                <div class="btn">
+                  <svg
+                    class="public-qty-minus"
+                    width="40"
+                    height="40"
+                    viewBox="0 0 14 6"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13.2377 5.54157H0.513672V0.27567H13.2377V5.54157Z"
+                      fill="white"
+                    />
+                  </svg>
+                  <button class="public-mint-button">
+                    <span>Mint</span>
+                    <span class="public-qty">1</span>
+                    <span>
+                      <span class="public_ttl_amt" data-amount="0.025"
+                        >0.025</span
+                      >
+                      Ξ
+                    </span>
+                  </button>
+                  <svg
+                    class="public-qty-plus"
+                    width="40"
+                    height="40"
+                    viewBox="0 0 24 25"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M15.0511 9.58064H23.2098V15.4794H15.0511V24.7003H8.83594V15.4794H0.654577V9.58064H8.83594V0.743862H15.0511V9.58064Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="presale hidden">
+              <h1>Presale Mint</h1>
+              <div class="btn btn-enable btn-presale">
+                <div class="btn">
+                  <svg
+                    class="presale-qty-minus"
+                    width="40"
+                    height="40"
+                    viewBox="0 0 14 6"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13.2377 5.54157H0.513672V0.27567H13.2377V5.54157Z"
+                      fill="white"
+                    />
+                  </svg>
+                  <button class="presale-mint-button">
+                    <span>Mint</span>
+                    <span class="presale-qty">1</span>
+                    <p>
+                      <span class="presale_ttl_amt" data-amount="0.025"
+                        >0.025</span
+                      >
+                      Ξ
+                    </p>
+                  </button>
+                  <svg
+                    class="presale-qty-plus"
+                    width="40"
+                    height="40"
+                    viewBox="0 0 24 25"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M15.0511 9.58064H23.2098V15.4794H15.0511V24.7003H8.83594V15.4794H0.654577V9.58064H8.83594V0.743862H15.0511V9.58064Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="collection hidden">
+              <h1>Cool Cat Mint</h1>
+              <div class="btn btn-enable btn-collection">
+                <div class="btn">
+                  <svg
+                    class="coll-qty-minus"
+                    width="40"
+                    height="40"
+                    viewBox="0 0 14 6"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13.2377 5.54157H0.513672V0.27567H13.2377V5.54157Z"
+                      fill="white"
+                    />
+                  </svg>
+                  <button class="collection-mint-button">
+                    <span>Mint</span>
+                    <span class="coll-qty">1</span>
+                    <span>
+                      <span class="coll_ttl_amt" data-amount="0.025"
+                        >0.025</span
+                      >
+                      Ξ
+                    </span>
+                  </button>
+                  <svg
+                    class="coll-qty-plus"
+                    width="40"
+                    height="40"
+                    viewBox="0 0 24 25"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M15.0511 9.58064H23.2098V15.4794H15.0511V24.7003H8.83594V15.4794H0.654577V9.58064H8.83594V0.743862H15.0511V9.58064Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="text-cont">
+            <div class="total-supply hidden">
+              <p class="leamon-text">Lemons minted:</p>
+              <p class="leamon-amount"></p>
+            </div>
+            <div>
+              <p class="leamon-text hidden">Your Lemons:</p>
+              <p class="wallet-amount"></p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-				    </div>
-			    </div>
-		    </div>
-		    <div class="collection hidden">
-			    <h1>Cool Cat Mint</h1>
-			    <div class="btn btn-enable btn-collection">
-				    <div class="btn">
-					    <svg class="coll-qty-minus" width="40" height="40" viewBox="0 0 14 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-						    <path d="M13.2377 5.54157H0.513672V0.27567H13.2377V5.54157Z" fill="white"/>
-					    </svg>
-					    <button class="collection-mint-button">
-						    <span>Mint</span>
-						    <span class="coll-qty">1</span>
-						    <p><span class="coll_ttl_amt" data-amount="0.025">0.025</span> Ξ</p>
-					    </button>
-					    <svg class="coll-qty-plus" width="40" height="40" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-						    <path d="M15.0511 9.58064H23.2098V15.4794H15.0511V24.7003H8.83594V15.4794H0.654577V9.58064H8.83594V0.743862H15.0511V9.58064Z" fill="white"/>
-					    </svg>
-
-				    </div>
-			    </div>
-		    </div>
-	    </div>
-	    <div class="text-cont">
-		    <div class="total-supply hidden">
-			    <p class="leamon-text">Lemons minted:</p>
-			    <p class="leamon-amount"></p>
-		    </div>
-		    <div>
-			    <p class="leamon-text hidden">Your Lemons:</p>
-			    <p class="wallet-amount"></p>
-		    </div>
-	    </div>
-    </section>
-    <section class="sec-2">
-        <img src="./assets/headerbottomlemons.png" alt="">
-    </section>
-    <section class="showcase sec-3" id="about">
+      <section class="sec-2">
+        <img src="./assets/headerbottomlemons.png" alt="" />
+      </section>
+      <section class="showcase sec-3" id="about">
         <div class="video-container">
-            <video src="./assets/grassbackground3.mp4" autoplay muted loop></video>
+          <video
+            src="./assets/grassbackground3.mp4"
+            autoplay
+            muted
+            loop
+          ></video>
         </div>
         <div class="content">
-            <div class="sec-3-container">
-                <div class="left">
-                    <img src="./assets/lemonicon.png" alt="">
-                    <h1>WHAT ARE THESE LITTLE LEMONS?</h1>
-                    <p>Little Lemon Friends is a NFT collection on the Ethereum blockchain consisting of 9,999 lemons that fell from the giant lemon tree, each going on their own little lemon adventures.</p>
-                    <br>
-                    <p>Each lemon will cost 0.025Ξ</p>
-                </div>
-                <div class="right">
-                    <img src="./assets/parentlemon.png" alt="">
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="sec-4">
-        <div class="sec-4-container">
+          <div class="sec-3-container">
             <div class="left">
-                <img src="./assets/traitsicon.png" alt="">
-                <h1>TRAITS</h1>
-                <br>
-                <p>Every lemon is unique and randomly generated as they each have collected different items throughout their adventures such as hats, accessories, clothes and more!</p>
-                <br><br>
-                <p>Note: Some of their fashion senses may not be the best as they are not the most intelligent of creatures.</p>
+              <img src="./assets/lemonicon.png" alt="" />
+              <h1>WHAT ARE THESE LITTLE LEMONS?</h1>
+              <p>
+                Little Lemon Friends is a NFT collection on the Ethereum
+                blockchain consisting of 9,999 lemons that fell from the giant
+                lemon tree, each going on their own little lemon adventures.
+              </p>
+              <br />
+              <p>Each lemon will cost 0.025Ξ</p>
             </div>
             <div class="right">
-                <img src="./assets/traitsImage.png" alt="">
+              <img src="./assets/parentlemon.png" alt="" />
             </div>
+          </div>
         </div>
-    </section>
-    <section class="sec-5">
-        <img src="./assets/lemonicon.png" alt="">
+      </section>
+      <section class="sec-4">
+        <div class="sec-4-container">
+          <div class="left">
+            <img src="./assets/traitsicon.png" alt="" />
+            <h1>TRAITS</h1>
+            <br />
+            <p>
+              Every lemon is unique and randomly generated as they each have
+              collected different items throughout their adventures such as
+              hats, accessories, clothes and more!
+            </p>
+            <br /><br />
+            <p>
+              Note: Some of their fashion senses may not be the best as they are
+              not the most intelligent of creatures.
+            </p>
+          </div>
+          <div class="right">
+            <img src="./assets/traitsImage.png" alt="" />
+          </div>
+        </div>
+      </section>
+      <section class="sec-5">
+        <img src="./assets/lemonicon.png" alt="" />
         <h1>LEMON TYPES</h1>
         <div class="lemon-slider">
-            <div class="lemon-slider-element">
-                    <img src="./assets/type1.png" alt="">
-                    <h2>Lemon Lemon</h2>
-                    <p>Common</p>
-            </div>
-            <div class="lemon-slider-element">
-                    <img src="./assets/type3.png" alt="">
-                    <h2>Gold Lemon</h2>
-                    <p>Rare</p>
-            </div>
-            <div class="lemon-slider-element">
-                <img src="./assets/type2.png" alt="">
-                <h2>Robo Lemon</h2>
-                <p>Pretty Rare</p>
-            </div>
-            <div class="lemon-slider-element">
-                    <img src="./assets/type4.png" alt="">
-                    <h2>Zombie Lemon</h2>
-                    <p>Pretty Rare</p>
-            </div>
-            <div class="lemon-slider-element">
-                    <img src="./assets/type6.png" alt="">
-                    <h2>Gemstone Lemons</h2>
-                    <p>Super Rare</p>
-            </div>
-            <div class="lemon-slider-element">
-                    <img src="./assets/type5.png" alt="">
-                    <h2>B&W Lemon</h2>
-                    <p>Ultra Rare</p>
-            </div>
-            <div class="lemon-slider-element">
-                <img src="./assets/type7.png" alt="">
-                <h2>???</h2>
-                <p>?@*&</p>
+          <div class="lemon-slider-element">
+            <img src="./assets/type1.png" alt="" />
+            <h2>Lemon Lemon</h2>
+            <p>Common</p>
+          </div>
+          <div class="lemon-slider-element">
+            <img src="./assets/type3.png" alt="" />
+            <h2>Gold Lemon</h2>
+            <p>Rare</p>
+          </div>
+          <div class="lemon-slider-element">
+            <img src="./assets/type2.png" alt="" />
+            <h2>Robo Lemon</h2>
+            <p>Pretty Rare</p>
+          </div>
+          <div class="lemon-slider-element">
+            <img src="./assets/type4.png" alt="" />
+            <h2>Zombie Lemon</h2>
+            <p>Pretty Rare</p>
+          </div>
+          <div class="lemon-slider-element">
+            <img src="./assets/type6.png" alt="" />
+            <h2>Gemstone Lemons</h2>
+            <p>Super Rare</p>
+          </div>
+          <div class="lemon-slider-element">
+            <img src="./assets/type5.png" alt="" />
+            <h2>B&W Lemon</h2>
+            <p>Ultra Rare</p>
+          </div>
+          <div class="lemon-slider-element">
+            <img src="./assets/type7.png" alt="" />
+            <h2>???</h2>
+            <p>?@*&</p>
+          </div>
         </div>
-        </div>
-    </section>
-    <section class="sec-6">
+      </section>
+      <section class="sec-6">
         <div class="assets6">
-        <div class="object-1 floating1">
-            <img src="./assets/lemoncircle1.png" alt="">
+          <div class="object-1 floating1">
+            <img src="./assets/lemoncircle1.png" alt="" />
+          </div>
+          <div class="object-2 floating">
+            <img src="./assets/lemoncircle2.png" alt="" />
+          </div>
+          <div class="object-3 floating2">
+            <img src="./assets/lemoncircle3.png" alt="" />
+          </div>
+          <div class="object-4 floating3">
+            <img src="./assets/lemoncircle4.png" alt="" />
+          </div>
+          <div class="text-1">so...</div>
+          <div class="text-2">WHY BUY A LEMON???</div>
         </div>
-        <div class="object-2 floating">
-            <img src="./assets/lemoncircle2.png" alt="">
-        </div>
-        <div class="object-3 floating2">
-            <img src="./assets/lemoncircle3.png" alt="">
-        </div>
-        <div class="object-4 floating3">
-            <img src="./assets/lemoncircle4.png" alt="">
-        </div>
-        <div class="text-1">so...</div>
-        <div class="text-2">WHY BUY A LEMON???</div>
-    </div>
-    </section>
+      </section>
 
+      <section class="sec-7" id="lemonmap">
+        <img class="lemonmaptitle" src="./assets/lemonmaptitle.png" alt="" />
+        <ul>
+          <li>
+            <img class="roadicon art" src="./assets/businesslemon.png" alt="" />
+            <h2 class="stroke-single" title="60%Ξ Back Into the Project">
+              60%Ξ Back Into the Project
+            </h2>
+            <p>
+              Once the lemons sell out, roughly 60% of the ETH raised after
+              accounting for taxes will be dedicated to help fund the project's
+              future development such as the various items on the roadmap.
+            </p>
+          </li>
+          <li>
+            <img class="roadicon art" src="./assets/artlemon.png" alt="" />
+            <h2 class="stroke-single" title="Artist Collaborations/Events">
+              Artist Collaborations/Events
+            </h2>
+            <p>
+              There will be featured artist(s) that we will collab with to make
+              more awesome lemon art in different styles for you to collect and
+              enjoy! <br /><br />There will be regular style airdrops and we
+              will also think of some innovative ways to do fun events to make
+              them more engaging and exciting :)<br /><br />
+            </p>
+          </li>
+          <li>
+            <img class="roadicon" src="./assets/lemongiftrans.gif" alt="" />
+            <h2 class="stroke-single" title="Pixel Lemons">Pixel Lemons</h2>
+            <p>
+              Lemon holders will get a free animated pixel lemon version of each
+              lemon they hold!
+            </p>
+          </li>
+          <li>
+            <img class="roadicon" src="./assets/worlddomination.png" alt="" />
+            <h2 class="stroke-single" title="Little Lemon Brand">
+              Little Lemon Brand
+            </h2>
+            <p>
+              There will also be ongoing things on the side such as lemon
+              merch/physical collectibles, animated series, etc. to further
+              expand the Little Lemon Friends brand.
+            </p>
+          </li>
+          <li>
+            <img class="roadicon isogif" src="./assets/isogif.gif" alt="" />
+            <h2 class="stroke-single" title="3D Voxel Lemons for the Metaverse">
+              3D Voxel Lemons for the Metaverse
+            </h2>
+            <p>
+              Every lemon you hold will allow you to claim a 3D voxel lemon for
+              the metaverse! The Giant Lemon Tree will also be created in the
+              metaverse for all little lemons to have a nice area to chill and
+              hangout.<br /><br />
+              After the main lemon drop, we will look into all the different
+              metaverses to find which is the best for the lemons to takeover
+              when metaverses are more established.
+            </p>
+          </li>
+          <li>
+            <h2 class="stroke-single" title="World Domination.">
+              World Domination.
+            </h2>
+          </li>
+        </ul>
 
-    <section class="sec-7" id="lemonmap">
-        <img class="lemonmaptitle" src="./assets/lemonmaptitle.png" alt="">
+        <img class="lemon-world" src="./assets/lemonworld.png" alt="" />
+        <img class="lemonsquad" src="./assets/lemonsquad.png" alt="" />
+        <img class="roadmaptree" src="./assets/roadmaptree.png" alt="" />
+        <img class="bufflemon" src="./assets/buffasslemon.gif" alt="" />
+      </section>
+      <section class="sec-8">
+        <h1>Lemon Team</h1>
         <ul>
-            <li>
-                <img class="roadicon art" src="./assets/businesslemon.png" alt="">
-                <h2 class="stroke-single" title="60%Ξ Back Into the Project">60%Ξ Back Into the Project</h2>
-                <p>Once the lemons sell out, roughly 60% of the ETH raised after accounting for taxes
-                will be dedicated to help fund the project's future development such as the various items on the roadmap.
-                </p>
-            </li>
-            <li>
-                <img class="roadicon art" src="./assets/artlemon.png" alt="">
-                <h2 class="stroke-single" title="Artist Collaborations/Events">Artist Collaborations/Events</h2>
-                <p>There will be featured artist(s) that we will collab with to make more awesome lemon art in different styles for you to collect and enjoy!
-                    <br><br>There will be regular style airdrops and we will also think of some innovative ways to do fun events to make them more engaging and exciting :)<br><br>
-                </p>
-            </li>
-            <li>
-                <img class="roadicon" src="./assets/lemongiftrans.gif" alt="">
-                <h2 class="stroke-single" title="Pixel Lemons">Pixel Lemons</h2>
-                <p>Lemon holders will be able to claim a free animated pixel lemon nft (with generated traits) for each lemon they hold!</p>
-            </li>
-            <li>
-                <img class="roadicon" src="./assets/worlddomination.png" alt="">
-                <h2 class="stroke-single" title="Little Lemon Brand">Little Lemon Brand</h2>
-                <p>There will also be ongoing things on the side such as lemon merch/physical collectibles, lemon juicing, animated series, etc. to further expand the Little Lemon Friends brand.
-                </p>
-            </li>
-            <li>
-                <img class="roadicon isogif" src="./assets/isogif.gif" alt="">
-                <h2 class="stroke-single" title="3D Voxel Lemons for the Metaverse">3D Voxel Lemons for the Metaverse</h2>
-                <p>Every lemon you hold will allow you to claim a 3D voxel lemon for the metaverse!
-                    The Giant Lemon Tree will also be created in the metaverse for all little lemons to have a nice area to chill and hangout.<br><br>
-                    After the main lemon drop, we will look into all the different metaverses to find which is the best for the lemons to takeover when metaverses are more established.</p>
-            </li>
-            <li>
-                <h2 class="stroke-single" title="World Domination.">World Domination.</h2>
-            </li>
-        
-           
+          <li>
+            <img src="./assets/soniriprofilepic.png" alt="" />
+            <h2>Sonirious</h2>
+            <p>Founder/Artist/Lemon Lord</p>
+            <p>CC #153 & BAYC #9177</p>
+            <ul>
+              <li>
+                <a href="https://twitter.com/sonirious" target="_blank">
+                  <img src="./assets/yellowtwittericon.png" alt="" />
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <img src="./assets/devprofilepicacid.png" alt="" />
+            <h2>Dropacid</h2>
+            <p>Smart Contract Dev</p>
+            <p>BAYC #1727</p>
+            <ul>
+              <li>
+                <a href="https://twitter.com/dropacid8" target="_blank">
+                  <img src="./assets/yellowtwittericon.png" alt="" />
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <img src="./assets/devprofilepic.png" alt="" />
+            <h2>Cider</h2>
+            <p>Project Manager</p>
+            <p>BAYC #2158 & CC #5177</p>
+            <ul>
+              <li>
+                <a href="https://twitter.com/AmHappyHome" target="_blank">
+                  <img src="./assets/yellowtwittericon.png" alt="" />
+                </a>
+              </li>
+            </ul>
+          </li>
         </ul>
-    
-        <img class="lemon-world" src="./assets/lemonworld.png" alt="">
-        <img class="lemonsquad" src="./assets/lemonsquad.png" alt="">
-        <img class="roadmaptree" src="./assets/roadmaptree.png" alt="">
-        <img class="bufflemon" src="./assets/buffasslemon.gif" alt="">
-    </section>
-    <section class="sec-8">
-      <h1>Lemon Team</h1>
+      </section>
+
+      <section class="sec-8">
         <ul>
-            <li>
-                <img src="./assets/soniriprofilepic.png" alt="">
-                <h2>Sonirious</h2>
-                <p>Founder/Artist/Lemon Lord</p>
-                <p>CC #153 & BAYC #9177</p>
-                <ul>
-                    <li>
-                        <a href="https://twitter.com/sonirious"target="_blank">
-                            <img src="./assets/yellowtwittericon.png" alt="">
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <img src="./assets/devprofilepicacid.png" alt="">
-                <h2>Dropacid</h2>
-                <p>Smart Contract Dev</p>
-                <p>BAYC #1727</p>
-                <ul>
-                    <li>
-                        <a href="https://twitter.com/dropacid8"target="_blank">
-                            <img src="./assets/yellowtwittericon.png" alt="">
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <img src="./assets/devprofilepic.png" alt="">
-                <h2>Cider</h2>
-                <p>Project Manager</p>
-                <p>BAYC #2158 & CC #5177</p>
-                <ul>
-                </ul>
-            </li>
+          <li>
+            <img src="./assets/soniriprofilepic.png" alt="" />
+            <h2>Erika Lee</h2>
+            <p>Social Media Mgr</p>
+            <p>CC #153 & BAYC #9177</p>
+            <ul>
+              <li>
+                <a href="https://twitter.com/sonirious" target="_blank">
+                  <img src="./assets/yellowtwittericon.png" alt="" />
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <img src="./assets/devprofilepicacid.png" alt="" />
+            <h2>Dropacid</h2>
+            <p>Smart Contract Dev</p>
+            <p>BAYC #1727</p>
+            <ul>
+              <li>
+                <a href="https://twitter.com/dropacid8" target="_blank">
+                  <img src="./assets/yellowtwittericon.png" alt="" />
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <img src="./assets/devprofilepic.png" alt="" />
+            <h2>Cider</h2>
+            <p>Project Manager</p>
+            <p>BAYC #2158 & CC #5177</p>
+            <ul></ul>
+          </li>
         </ul>
-    </section>
-    <footer>
+      </section>
+      <footer>
         <div class="footer-container">
-            <div class="left">
-                <p>© 2021 Little Lemon Friends </p>   
+          <div class="left">
+            <p>© 2021 Little Lemon Friends</p>
+            <div class="corpp">
+              <p>Wango Creations Corp.</p>
             </div>
-            <div class="right">
-                <ul>
-                    <li>
-                        <a href="https://discord.gg/DnaFGpwCKQ"target="_blank">
-                            <img src="./assets/discordlogo.png" alt="">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://twitter.com/LittlelemonsNFT"target="_blank">
-                            <img src="./assets/twitterlogo.png" alt="">
-                        </a>
-                    </li>
-                </ul>
-            </div>
+          </div>
+          <div class="right">
+            <ul>
+              <li>
+                <a href="https://discord.gg/DnaFGpwCKQ" target="_blank">
+                  <img src="./assets/discordlogo.png" alt="" />
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/LittlelemonsNFT" target="_blank">
+                  <img src="./assets/twitterlogo.png" alt="" />
+                </a>
+              </li>
+              <li class="footeritems">
+                <a
+                  href="https://littlelemonfriends.medium.com/terms-of-service-little-lemon-friends-f1a92ad255bd"
+                  target="_blank"
+                >
+                  <p>Terms of Service</p>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-    </footer>
+      </footer>
+    </div>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="./third-party/bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="./third-party/swiper-7/swiperjs-7-4-1.js"></script>
     <script src="./rellax.min.js"></script>
-    <script src="./index.js"></script>
-    <script type="text/javascript" src="https://unpkg.com/web3@1.6.1/dist/web3.min.js"></script>
-    <script type="text/javascript" src="https://unpkg.com/web3modal@1.9.0/dist/index.js"></script>
-    <script type="text/javascript" src="https://unpkg.com/evm-chains@0.2.0/dist/umd/index.min.js"></script>
-    <script type="text/javascript" src="https://unpkg.com/@walletconnect/web3-provider"></script>
-    <script type="text/javascript" src="https://unpkg.com/fortmatic@2.0.6/dist/fortmatic.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/notiflix@3.0.2/dist/notiflix-aio-3.0.2.min.js"></script>
+    <script src="./js/index.js"></script>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/web3@1.6.1/dist/web3.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/web3modal@1.9.0/dist/index.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/evm-chains@0.2.0/dist/umd/index.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/@walletconnect/web3-provider"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/fortmatic@2.0.6/dist/fortmatic.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/notiflix@3.0.2/dist/notiflix-aio-3.0.2.min.js"
+    ></script>
     <script src="abi.js"></script>
     <script src="config.js"></script>
     <script src="wallet.js"></script>
     <script>
-	    let max_mint = 4
-	    registerSupplyElement(document.querySelector('p.leamon-amount'), 9999, "numTokensMinted")
-	    registerBalanceElement(document.querySelector('p.wallet-amount'), 15, "balanceOf")
-	    registerConnectButton(document.querySelector('.connect-button'));
-	    registerMintButton(document.querySelector('button.public-mint-button'), get_pub_qty_to_mint, "mintLemons", "25000000000000000")
-	    registerMintButton(document.querySelector('button.presale-mint-button'), get_presale_qty_to_mint, "mintPresale", "25000000000000000")
-	    registerMintButton(document.querySelector('button.collection-mint-button'), get_coll_qty_to_mint, "mintCollectionPresale", "25000000000000000")
+      let max_mint = 4;
+      registerSupplyElement(
+        document.querySelector("p.leamon-amount"),
+        9999,
+        "numTokensMinted"
+      );
+      registerBalanceElement(
+        document.querySelector("p.wallet-amount"),
+        15,
+        "balanceOf"
+      );
+      registerConnectButton(document.querySelector(".connect-button"));
+      registerMintButton(
+        document.querySelector("button.public-mint-button"),
+        get_pub_qty_to_mint,
+        "mintLemons",
+        "25000000000000000"
+      );
+      registerMintButton(
+        document.querySelector("button.presale-mint-button"),
+        get_presale_qty_to_mint,
+        "mintPresale",
+        "25000000000000000"
+      );
+      registerMintButton(
+        document.querySelector("button.collection-mint-button"),
+        get_coll_qty_to_mint,
+        "mintCollectionPresale",
+        "25000000000000000"
+      );
     </script>
-</body>
+  </body>
 </html>

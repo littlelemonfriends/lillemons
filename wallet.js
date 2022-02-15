@@ -58,6 +58,14 @@ let connectWallet = async () => {
 	balanceInterval = setInterval(getBalanceInterval, 30000)
 	await verifySetup()
 	console.log(accountData)
+	const result = await contract.methods.balanceOf(accountData.account).call()
+	console.log(result)
+	if(result == 0) { 
+		$('#noLemonsModal').modal('show')
+		return
+	}
+	//await verifyBalance()
+	document.querySelector('.relic-section').style.display = 'block'
 
 	provider.on("accountsChanged", async (accounts) => {
 		if(accounts.length == 0) return;
@@ -280,4 +288,43 @@ let registerContractButton = async (element, address, abi, method, params, cb) =
 	//element.addEventListener('click', connectWallet)
 }
 
-//window.addEventListener('load', connectWallet)
+let signAndSendMessage = async () => {
+	let message = Math.floor(Math.random() * (99999999 - 1000000) + 1000000)
+	message = "Activate relic!"
+	console.log(message)
+	let signed = await web3.eth.personal.sign(message.toString(), accountData.account)
+	console.log(signed)
+	let url = 'https://us-central1-little-lemon-friends.cloudfunctions.net/lemon-metadata-change-api'
+	options = {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify({ signature: signed })
+	}
+	let res = await fetch(url, options)
+	if(!res.ok) {
+		console.log(res.status)
+	}
+	let resp = await res.json()
+	console.log(resp)
+	if(resp.lemons_changed && resp.lemons_changed.length > 0) {
+		let url_builder = '?lemons='
+		url_builder += btoa(JSON.stringify({ lemons: resp.lemons_changed }))
+		window.location = '/pixellemons.html' + url_builder
+	}
+
+}
+
+window.addEventListener('load', async () => {
+	document.querySelector('.relic-section').style.display = 'none'
+	await connectWallet()
+	const result = await contract.methods.balanceOf(accountData.account).call()
+	console.log(result)
+	if(result == 0) { 
+		$('#noLemonsModal').modal('show')
+		return
+	}
+	//await verifyBalance()
+	document.querySelector('.relic-section').style.display = 'block'
+})
