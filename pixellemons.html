@@ -69,6 +69,7 @@
 	    lemons_changed = JSON.parse(atob(new URL(window.location.toString()).searchParams.get('lemons')))
 	    console.log(lemons_changed)
 	    for (let l of lemons_changed.lemons) {
+		l = parseInt(l)
 		document.querySelector('.swiper-wrapper').innerHTML += `<div class="swiper-slide"><img src="https://chaos-share.s3.amazonaws.com/lemons/${l}.gif"></img></div>`
 	    }
     </script>
