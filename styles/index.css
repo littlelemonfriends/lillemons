@@ -1175,11 +1175,12 @@ header .social-icon img {
   }
 
   .sec-8 > ul > li img {
-    max-width: 40px;
+    max-width: 80px;
   }
 
   .sec-8 > ul > li > ul img {
-    max-width:65px;
+    max-width:40px;
+    margin-right: 2em;
   }
 
   footer .footer-container {
