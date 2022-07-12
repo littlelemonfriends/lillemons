@@ -46,6 +46,10 @@ ul {
   list-style: none;
 }
 
+.twitter {
+  max-width: 2rem;
+}
+
 .showcase {
   height: 100vh;
   display: flex;
@@ -1046,11 +1050,20 @@ header .social-icon img {
     flex-direction: column;
     padding: 0;
     justify-content: center;
+    padding-bottom: 1rem;
   }
 
   footer .footer-container .left p {
     font-size: 20px;
     line-height: 23px;
+    margin: 0.5rem;
+    margin-right: 5rem;
+  }
+
+  footer .footer-container .left {
+    font-size: 20px;
+    line-height: 23px;
+    padding-top: 1rem;
   }
 
   footer .footer-container ul li img {
@@ -1058,7 +1071,12 @@ header .social-icon img {
   }
 
   footer .footer-container .right {
-    margin-top: 5%;
+    margin-top: -4rem;
+  }
+
+  footer .footer-container .right img{
+    margin-top: 6rem;
+    margin-right: 0rem;
   }
 
   .sec-4-container {
@@ -1157,7 +1175,7 @@ header .social-icon img {
   }
 
   .sec-8 > ul > li img {
-    max-width: 65px;
+    max-width: 40px;
   }
 
   .sec-8 > ul > li > ul img {
