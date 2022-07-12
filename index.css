@@ -960,6 +960,7 @@ header .social-icon img {
         -webkit-text-stroke: 4px #fad900;
     }
 
+
     footer .footer-container {
         flex-direction: column;
         padding: 0;
@@ -1081,6 +1082,7 @@ header .social-icon img {
     footer .footer-container {
         min-height: 142px;
     }
+    
 
 
     .object-1 {
@@ -1150,8 +1152,16 @@ header .social-icon img {
     }
 }
 
+
+
+
 @media screen and (max-width: 600px) {
    
+    footer .footer-container .left p {
+        font-size: 20px;
+        line-height: 23px;
+    }
+
    .videotree {
        display: none;
    }
