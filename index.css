@@ -1160,6 +1160,13 @@ header .social-icon img {
     footer .footer-container .left p {
         font-size: 20px;
         line-height: 23px;
+        margin: 0rem;
+    }
+
+    footer .footer-container .left {
+        font-size: 20px;
+        line-height: 23px;
+        padding-top: 1rem;
     }
 
    .videotree {
